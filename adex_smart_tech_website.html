@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#102a56">
+<title>ADEX SMART TECH | Smart Study, Smart Future</title>
+<style>
+:root{--navy:#102a56;--blue:#2563eb;--cyan:#38bdf8;--gold:#fbbf24;--ink:#172033;--muted:#64748b;--bg:#f4f7fb;--card:#fff;--line:#e2e8f0;--green:#15803d}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+header{background:linear-gradient(130deg,#0b1f43,#174ea6 70%,#0284c7);color:#fff;padding:16px 18px 54px}
+nav{max-width:1100px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.brand{font-size:1.12rem;font-weight:900;letter-spacing:.3px}.brand span{color:var(--gold)}
+nav a{color:#fff;text-decoration:none;font-size:.92rem;margin:0 5px}
+.hero{max-width:1100px;margin:48px auto 0;display:grid;grid-template-columns:1.3fr .7fr;gap:24px;align-items:center}
+.kicker{display:inline-block;background:#ffffff1c;border:1px solid #ffffff50;padding:6px 12px;border-radius:30px;font-size:.85rem}
+h1{font-size:clamp(2.1rem,6vw,4rem);line-height:1.08;margin:16px 0}h1 span{color:var(--gold)}
+.hero p{max-width:650px;color:#e0ecff;font-size:1.05rem}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.btn{display:inline-block;border:0;border-radius:12px;padding:12px 17px;font-weight:800;text-decoration:none;cursor:pointer;font-size:.95rem}
+.primary{background:var(--gold);color:#172033}.secondary{background:#ffffff18;color:#fff;border:1px solid #ffffff65}
+.hero-box{background:#ffffff12;border:1px solid #ffffff40;border-radius:22px;padding:22px;backdrop-filter:blur(8px)}
+.hero-box strong{font-size:1.15rem}.statgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
+.stat{background:#ffffff12;padding:13px;border-radius:14px}.stat b{display:block;font-size:1.4rem;color:var(--gold)}
+main{max-width:1100px;margin:-26px auto 0;padding:0 16px 40px}
+.notice{background:#fff8dc;border:1px solid #f5d879;padding:13px 15px;border-radius:14px;font-size:.9rem;margin-bottom:22px}
+section{margin:32px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:12px;flex-wrap:wrap;margin-bottom:15px}
+h2{margin:0;color:var(--navy);font-size:1.65rem}.sub{color:var(--muted);margin:5px 0 0}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:0 5px 18px #102a5608}
+.icon{font-size:1.8rem}.card h3{margin:8px 0 5px;color:var(--navy)}.card p{color:var(--muted);margin:4px 0 13px;font-size:.94rem}
+.tag{display:inline-block;font-size:.78rem;background:#eaf2ff;color:#1d4ed8;padding:4px 9px;border-radius:20px;margin:3px 3px 3px 0}
+.card .btn{padding:9px 12px;font-size:.86rem;background:var(--navy);color:#fff}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+form{display:grid;gap:11px}label{font-size:.9rem;font-weight:700}input,select{width:100%;padding:12px;border:1px solid #cbd5e1;border-radius:10px;font:inherit;background:#fff}
+button:focus,a:focus,input:focus,select:focus{outline:3px solid #93c5fd;outline-offset:2px}
+.form-btn{background:var(--blue);color:#fff;border:0;border-radius:10px;padding:12px;font-weight:800;cursor:pointer}
+.result{margin-top:12px;padding:12px;border-radius:10px;background:#eff6ff;display:none}
+.quiz-question{border-top:1px solid var(--line);padding:13px 0}.quiz-question:first-of-type{border-top:0}.quiz-question p{font-weight:750;margin:0 0 8px}
+.option{display:block;margin:7px 0;font-weight:500}.option input{width:auto;margin-right:7px}
+.premium{background:linear-gradient(125deg,#102a56,#1d4ed8);color:#fff;border-radius:22px;padding:25px;display:grid;grid-template-columns:1.2fr .8fr;gap:20px;align-items:center}
+.premium h2{color:#fff}.premium p{color:#dbeafe}.premium ul{padding-left:20px}.premium .btn{background:var(--gold);color:#172033}
+footer{background:#0b1f43;color:#dbeafe;text-align:center;padding:25px 16px;font-size:.9rem}footer strong{color:#fff}
+.small{font-size:.82rem;color:var(--muted)}
+@media(max-width:760px){.hero{grid-template-columns:1fr;margin-top:32px}.grid{grid-template-columns:1fr 1fr}.two,.premium{grid-template-columns:1fr}.hero-box{max-width:520px}}
+@media(max-width:480px){.grid{grid-template-columns:1fr}nav{align-items:flex-start}nav div:last-child{display:flex;flex-wrap:wrap;gap:8px}.hero{margin-top:25px}header{padding-bottom:45px}main{padding-left:12px;padding-right:12px}}
+</style>
+</head>
+<body>
+<header>
+  <nav>
+    <div class="brand">🎓 ADEX <span>SMART TECH</span></div>
+    <div><a href="#courses">Courses</a><a href="#quiz">Practice</a><a href="#account">Student</a><a href="#premium">Premium</a></div>
+  </nav>
+  <div class="hero">
+    <div>
+      <span class="kicker">🎓 Learn • Practice • Achieve</span>
+      <h1>SMART STUDY,<br><span>SMART FUTURE.</span></h1>
+      <p>Welcome to ADEX SMART TECH — a learning hub for university students. Explore courses, revise with study materials, practise sample questions and track your practice score.</p>
+      <div class="actions"><a class="btn primary" href="#courses">📚 Explore Courses</a><a class="btn secondary" href="#quiz">📝 Try a Quiz</a></div>
+    </div>
+    <div class="hero-box">
+      <strong>🌟 Your learning journey starts here</strong>
+      <p>Study at your own pace with organised learning resources and practice activities.</p>
+      <div class="statgrid"><div class="stat"><b>📚</b>Courses</div><div class="stat"><b>📝</b>Practice quizzes</div><div class="stat"><b>📄</b>Study notes</div><div class="stat"><b>🎯</b>Learning goals</div></div>
+    </div>
+  </div>
+</header>
+<main>
+  <div class="notice">ℹ️ <strong>Prototype notice:</strong> This is the first, free demo version. Sample quiz scores are calculated in this browser only. Real secure student accounts, shared results, PDF uploads and online membership payments need a backend and further setup.</div>
+
+  <section id="courses">
+    <div class="section-head"><div><h2>📚 Explore Courses</h2><p class="sub">Start with a course and add your own lessons as the site grows.</p></div></div>
+    <div class="grid">
+      <article class="card"><div class="icon">🧠</div><h3>Logic & Critical Thinking</h3><p>Practise arguments, reasoning, fallacies and problem-solving.</p><span class="tag">Freshman</span><span class="tag">Study guide</span><br><a class="btn" href="#quiz">Practise now</a></article>
+      <article class="card"><div class="icon">🇬🇧</div><h3>Communicative English</h3><p>Build grammar, vocabulary, reading and communication skills.</p><span class="tag">Language</span><span class="tag">Practice</span><br><a class="btn" href="#quiz">Practise now</a></article>
+      <article class="card"><div class="icon">🧑‍🤝‍🧑</div><h3>General Psychology</h3><p>Review introductory psychology concepts and key terms.</p><span class="tag">Freshman</span><span class="tag">Revision</span><br><a class="btn" href="#quiz">Practise now</a></article>
+      <article class="card"><div class="icon">➗</div><h3>Mathematics</h3><p>Strengthen core concepts with step-by-step practice.</p><span class="tag">Problem solving</span><br><a class="btn" href="#quiz">Practise now</a></article>
+      <article class="card"><div class="icon">🧬</div><h3>Biology & Health</h3><p>Organise introductory biology and health-science study topics.</p><span class="tag">Health sciences</span><br><a class="btn" href="#quiz">Practise now</a></article>
+      <article class="card"><div class="icon">📄</div><h3>PDF Study Library</h3><p>Your PDF notes will be listed here once you upload them and add their links.</p><span class="tag">Study materials</span><br><a class="btn" href="#account">Student area</a></article>
+    </div>
+  </section>
+
+  <section id="quiz">
+    <div class="section-head"><div><h2>📝 Sample Online Quiz</h2><p class="sub">Answer these example questions to test the demo score feature.</p></div></div>
+    <div class="card">
+      <form id="quizForm">
+        <div class="quiz-question"><p>1. Which option best describes critical thinking?</p>
+          <label class="option"><input type="radio" name="q1" value="a"> Accepting every claim without checking</label>
+          <label class="option"><input type="radio" name="q1" value="b"> Carefully evaluating evidence and reasons</label>
+          <label class="option"><input type="radio" name="q1" value="c"> Guessing without evidence</label></div>
+        <div class="quiz-question"><p>2. Which of the following is a conclusion in an argument?</p>
+          <label class="option"><input type="radio" name="q2" value="a"> A claim supported by reasons</label>
+          <label class="option"><input type="radio" name="q2" value="b"> An unrelated example only</label>
+          <label class="option"><input type="radio" name="q2" value="c"> A question with no answer</label></div>
+        <div class="quiz-question"><p>3. What should you do when checking a source?</p>
+          <label class="option"><input type="radio" name="q3" value="a"> Ignore the author and evidence</label>
+          <label class="option"><input type="radio" name="q3" value="b"> Share it immediately without reading</label>
+          <label class="option"><input type="radio" name="q3" value="c"> Check its reliability and supporting evidence</label></div>
+        <button class="form-btn" type="submit">Check My Score</button>
+      </form>
+      <div class="result" id="quizResult" role="status" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section id="account">
+    <div class="section-head"><div><h2>👨‍🎓 Student Area</h2><p class="sub">A demo form to preview the future student registration experience.</p></div></div>
+    <div class="two">
+      <div class="card"><h3>🧑‍🎓 Student Registration Preview</h3><p>This form demonstrates the layout only. It does not create a secure online account or store your details on a server.</p>
+        <form id="studentForm">
+          <div><label for="studentName">Full name</label><input id="studentName" required maxlength="80" placeholder="Enter your name"></div>
+          <div><label for="studentEmail">Email (optional)</label><input id="studentEmail" type="email" placeholder="you@example.com"></div>
+          <div><label for="studentLevel">Study level</label><select id="studentLevel"><option>Freshman Program</option><option>University Student</option><option>Secondary School</option><option>Other</option></select></div>
+          <button class="form-btn" type="submit">Preview Registration</button>
+        </form><div class="result" id="studentResult" role="status" aria-live="polite"></div>
+      </div>
+      <div class="card"><h3>📄 Add Your PDF Notes</h3><p>To add real notes, upload each PDF to a file host or your learning platform, then add a download button or link here.</p><p><strong>Suggested folders:</strong></p><span class="tag">Logic</span><span class="tag">English</span><span class="tag">Psychology</span><span class="tag">Mathematics</span><p class="small">Only share learning files you have permission to distribute.</p></div>
+    </div>
+  </section>
+
+  <section id="premium">
+    <div class="premium">
+      <div><h2>💎 Premium Membership</h2><p>Offer extra study guides, advanced practice exams and structured revision materials to members.</p>
+      <ul><li>Premium PDF notes</li><li>Additional practice questions</li><li>Organised revision resources</li><li>Member-only learning content</li></ul></div>
+      <div class="card" style="color:#172033"><h3>✨ Coming Soon</h3><p>Membership and payment are not connected in this demo. Before accepting payments, set up secure accounts, access controls, payment processing and clear terms.</p><a class="btn" href="#account" style="background:#fbbf24;color:#172033">Register Interest</a></div>
+    </div>
+  </section>
+  <section><div class="card"><h3>📣 Announcement</h3><p>Welcome to ADEX SMART TECH! Keep learning, keep practising, and build your future one lesson at a time.</p><span class="tag">SMART STUDY — SMART FUTURE</span></div></section>
+</main>
+<footer><strong>🎓 ADEX SMART TECH</strong><br>SMART STUDY — SMART FUTURE<br><span>Educational demo website • Keep learning!</span></footer>
+<script>
+document.getElementById('quizForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  const answers={q1:'b',q2:'a',q3:'c'};let score=0;
+  for(const [q,a] of Object.entries(answers)){const chosen=this.querySelector('input[name="'+q+'"]:checked');if(chosen&&chosen.value===a)score++;}
+  const box=document.getElementById('quizResult');box.style.display='block';
+  box.innerHTML='<strong>Your demo score: '+score+'/3 ('+Math.round(score/3*100)+'%)</strong><br>'+ (score===3?'Excellent work!':'Good practice. Review the questions and try again.')+'<br><span class="small">This score is calculated in your current browser only; it is not saved to an admin or student account.</span>';
+});
+document.getElementById('studentForm').addEventListener('submit', function(e){
+  e.preventDefault();const name=document.getElementById('studentName').value.trim();const level=document.getElementById('studentLevel').value;
+  const box=document.getElementById('studentResult');box.style.display='block';
+  box.textContent='Hello '+name+'! Your registration preview for '+level+' is complete. This is only a demo; no account has been created.';
+});
+</script>
+</body>
+</html>
